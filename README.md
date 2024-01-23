@@ -8,6 +8,14 @@ This is still very much a work in progress and currently lacks the installation 
 There are comments in the code as to where the base data needs to come from, but it's not going to be easy to make
 it work yet.
 
+# Data
+The following data are required from [UK data service](https://infuse.ukdataservice.ac.uk/help/definitions/2011geographies/index.html) to `external-data/geography/`:
+- [MSOA](https://borders.ukdataservice.ac.uk/ukborders/easy_download/prebuilt/shape/infuse_msoa_lyr_2011_clipped.zip)
+- [OA](https://borders.ukdataservice.ac.uk/ukborders/easy_download/prebuilt/shape/infuse_oa_lyr_2011_clipped.zip)
+
+And from [Geolytix](https://geolytix.com/blog/geolytix-supermarket-retail-points-2/) to `external-data/Geolytix/`
+- [Geolytix](https://drive.google.com/file/d/1B8M7m86rQg2sx2TsHhFa2d-x-dZ1DbSy/view)
+
 # INSTALLATION
 File structure:
 
