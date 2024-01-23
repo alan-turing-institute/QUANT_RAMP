@@ -478,21 +478,22 @@ zonecodes = pd.read_csv(os.path.join(modelRunsDir,ZoneCodesFilename))
 zonecodes.set_index('areakey')
 
 #load cost matrix, time in minutes between MSOA zones
-#cij = loadQUANTMatrix(os.path.join(modelRunsDir,QUANTCijRoadMinFilename))
+cij = loadQUANTMatrix(os.path.join(modelRunsDir,QUANTCijRoadMinFilename))
 
 #now run the relevant models to produce the outputs
-#runRetailModel()
-#runSchoolsModel()
-#runHospitalsModel()
+runRetailModel()
+runSchoolsModel()
+runHospitalsModel()
 
 ##new models
-#runPopulationRetailModel()
+# runPopulationRetailModel()
 
 ################################################################################
 #analytics - let's see how well it works                                       #
 ################################################################################
 
-runAnalytics()
+# TODO: check from here
+# runAnalytics()
 
 
 ################################################################################

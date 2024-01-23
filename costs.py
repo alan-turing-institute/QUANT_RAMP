@@ -50,8 +50,8 @@ def costMSOAToPoint(cij,dfPoints):
     m, n = cij.shape
     p, cols = dfPoints.shape
     print("array size = ",p,m)
-    #NO! better below cijpoint = np.arange(m*p,dtype=np.float).reshape(m, p) #so m=MSOA and p=points index
-    cijpoint = np.zeros(m*p,dtype=np.float).reshape(m,p) #so m=MSOA and p=points index
+    #NO! better below cijpoint = np.arange(m*p,dtype=float).reshape(m, p) #so m=MSOA and p=points index
+    cijpoint = np.zeros(m*p,dtype=float).reshape(m,p) #so m=MSOA and p=points index
     
     #now make the amended cost function
     count=0

@@ -102,7 +102,7 @@ class QUANTSchoolsModel:
         eastFieldName = "Easting"
         northFieldName = "Northing"
         # removed df = pd.read_csv(filename,usecols=[keyFieldName,openFieldName,capacityFieldName,eastFieldName,northFieldName])
-        df = pd.read_csv(filename,usecols=[keyFieldName,capacityFieldName,eastFieldName,northFieldName])
+        df = pd.read_csv(filename,usecols=[keyFieldName,capacityFieldName,eastFieldName,northFieldName], encoding='latin-1')
         df = df.dropna(axis=0) #drop the n/a values
         #REMOVED - all open df = df[df[openFieldName] == 1] #drop any school which is not open (i.e. retain==1)
         df.reset_index(drop=True,inplace=True) #IMPORTANT, otherwise indexes remain for the 28,000 or so rows i.e. idx=0..28000! NOT true row count!
@@ -160,7 +160,7 @@ class QUANTSchoolsModel:
         #Aj=FjLambda where the attractor is +ve power of floorspace (from retail model)
         #cij=travel cost
         #Beta=scaling param
-        Pij = np.arange(self.m*self.n,dtype=np.float).reshape(self.m, self.n) #or np.zeros(N*N).reshape(N, N)
+        Pij = np.arange(self.m*self.n,dtype=float).reshape(self.m, self.n) #or np.zeros(N*N).reshape(N, N)
         ExpMBetaCij = np.exp(-Beta*self.cij)
         for i in range(self.m):
             #denom = 0
@@ -184,7 +184,7 @@ class QUANTSchoolsModel:
     @returns probPij, but with each set of MSOA flows to schools scaled to a probability
     """
     def computeProbabilities(self,Pij):
-        probPij = np.arange(self.m*self.n,dtype=np.float).reshape(self.m, self.n)
+        probPij = np.arange(self.m*self.n,dtype=float).reshape(self.m, self.n)
         for i in range(self.m):
             sum=np.sum(Pij[i,])
             if sum<=0:

@@ -120,7 +120,7 @@ class QUANTLHModel:
         #Aj=FjLambda where the attractor is +ve power of floorspace (from retail model)
         #cij=travel cost
         #Beta=scaling param
-        Sij = np.arange(self.m*self.n,dtype=np.float).reshape(self.m, self.n) #or np.zeros(N*N).reshape(N, N)
+        Sij = np.arange(self.m*self.n,dtype=float).reshape(self.m, self.n) #or np.zeros(N*N).reshape(N, N)
         ExpMBetaCij = np.exp(-Beta*self.cij)
         for i in range(self.m):
             #denom = 0
@@ -144,7 +144,7 @@ class QUANTLHModel:
     @returns probSij, but with each set of MSOA flows to schools scaled to a probability
     """
     def computeProbabilities(self,Sij):
-        probSij = np.arange(self.m*self.n,dtype=np.float).reshape(self.m, self.n)
+        probSij = np.arange(self.m*self.n,dtype=float).reshape(self.m, self.n)
         for i in range(self.m):
             sum=np.sum(Sij[i,])
             if sum<=0:
